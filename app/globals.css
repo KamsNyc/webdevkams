@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer {
+  :root {
+    --brand-color: #1821F8;
+    --grey: #BBBBBA;
+    --light-gray: #F4F4F1;
+    --dark-gray: #1F1F1E;
+    --white: #ffffff;
+  }
+}
