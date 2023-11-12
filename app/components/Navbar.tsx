@@ -8,7 +8,7 @@ function Navbar() {
         <h3 className='text-white font-extrabold tracking-widest text-[14px]'>©WEBDEVKAMS</h3>
 
         {/* MENU LINKS */}
-        <ul className='text-white flex items-center gap-[24px] text-[14px]'>
+        <ul className='text-white flex items-center gap-[24px]'>
             <Link href={'#about'}>ABOUT</Link>
             <Link href={'/works'}>WORKS</Link>
             <Link href={'/contact'}>CONTACT</Link>

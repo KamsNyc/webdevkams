@@ -47,7 +47,7 @@ function HeroSection() {
         <div className="lg:absolute z-[8] right-16 bottom-[50px]">
           <section className="hidden lg:flex items-center lg:justify-evenly lg:max-w-[616px] lg:max-h-[162px] gap-10">
             {/* SHORT BILB */}
-            <div className="uppercase text-[24px] text-white flex flex-col gap-y-2 whitespace-nowrap z-10 font-light">
+            <div className="uppercase text-[22px] text-white flex flex-col gap-y-2 whitespace-nowrap z-10 font-light">
               <p>Full Stack Developer</p>
               <p>MERN Stack Specialist</p>
               <p>Web Dev + Design Enthusiast</p>
