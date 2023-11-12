@@ -6,7 +6,7 @@ function ShortAboutMe() {
     return (
       <section className="w-full px-4 md:px-[64px] 2xl:px-[256px] ">
         {/* FLEX CONTAINER */}
-        <div id='about' className="block lg:flex items-center justify-between mt-[120px] lg:mt-0 h-[471px] gap-16">
+        <div id='about' className="block lg:flex items-center justify-between my-[100px] md:my-[120px] lg:my-0 h-[471px] gap-16">
           {/* SHORT ABOUT LEFT SIDE */}
           <div className="w-full md:max-w-[648px] leading-10 ">
             <h1 className="text-[34px] md:text-[36px] text-black font-normal">Hi, I&apos;m Kamel. I began by creating Shopify stores, then ventured into running my own ecommerce business. Now, I focus on both software and website development. Let&apos;s turn your ideas into reality!</h1>
