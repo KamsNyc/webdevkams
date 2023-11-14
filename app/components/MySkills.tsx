@@ -19,7 +19,7 @@ function MySkills() {
     <section className='w-full h-full'> 
     {/* HEADING */}
     <div className="flex items-center justify-start">
-        <p className='text-[24px] text-[--brand-color] uppercase mx-4 md:mx-[64px] 2xl:mx-[256px] leading-7 w-full'>Skills<span className='text-[18px] text-black flex items-center font-medium normal-case'>The skills, tools and technologies I am really good at:</span></p>
+        <p className='text-[22px] text-[--brand-color] uppercase mx-4 md:mx-[64px] 2xl:mx-[256px] leading-7 w-full'>Skills<span className='text-[18px] text-black flex items-center font-medium normal-case'>The skills, tools and technologies I am really good at:</span></p>
         </div>
         <section className='my-[24px] md:mt-[48px] gap-y-4 gap-x-3 grid grid-cols-4 grid-rows-3 md:flex item-center px-4 py-2'>
            {
