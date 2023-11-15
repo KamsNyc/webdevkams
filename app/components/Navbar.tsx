@@ -10,8 +10,9 @@ function Navbar() {
         {/* MENU LINKS */}
         <ul className='text-white flex items-center gap-[24px]'>
             <Link href={'#about'}>ABOUT</Link>
-            <Link href={'/works'}>WORKS</Link>
-            <Link href={'/contact'}>CONTACT</Link>
+            <Link href={'#works'}>WORKS</Link>
+            <Link href={'#testimonials'}>TESTIMONIALS</Link>
+            <Link href={'#contact'}>CONTACT</Link>
         </ul>
     </section>
   )

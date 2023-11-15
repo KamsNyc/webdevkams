@@ -20,9 +20,9 @@ function ProjectCard() {
   return (
     <div>
       {/* ICON CARD CONTAINER */}
-      <div className="mt-[48px] md:flex items-center mx-4 md:mx-[64px] 2xl:mx-[256px]">
+      <div className="mt-[48px] md:flex items-center mx-0 md:mx-[64px] 2xl:mx-[256px]">
         {/* LEFT IMAGE CONTAINER */}
-        <div className="h-full w-full md:w-1/2 bg-gray-50 rounded-xl flex items-center justify-center p-12">
+        <div className="h-full w-full md:w-1/2 bg-gray-50 rounded-xl flex items-center justify-center p-4 lg:p-8">
           <img
             src="/ProjectPic.png"
             alt="Image"
@@ -30,7 +30,7 @@ function ProjectCard() {
           />
         </div>
         {/* RIGHT SIDE CONTAINER */}
-        <div className="h-full w-full md:w-1/2 p-12 ">
+        <div className="h-full w-full md:w-1/2 p-4 lg:p-12 ">
           <h1 className="text-[24px] font-bold flex items-center gap-4">Fiskil<span> {/* OPEN LINK */}
             <div className="w-[24px] h-[24px] flex items-center justify-center cursor-pointer">
               < BiLinkExternal size={20} />

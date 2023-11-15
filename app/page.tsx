@@ -6,6 +6,7 @@ import Projects from './components/Projects'
 import MySkills from './components/MySkills'
 import Testimonals from './components/Testimonals'
 import ContactFooter from './components/ContactFooter'
+import TestimonialsTest from './components/TestimonialsTest'
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
 
        {/* Tesiminals */}
        <Testimonals />
+       {/* <TestimonialsTest /> */}
 
        {/* CONTACT/FOOTER */}
        <ContactFooter />
