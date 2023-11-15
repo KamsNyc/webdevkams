@@ -5,6 +5,7 @@ import ShortAboutMe from './components/ShortAboutMe'
 import Projects from './components/Projects'
 import MySkills from './components/MySkills'
 import Testimonals from './components/Testimonals'
+import ContactFooter from './components/ContactFooter'
 
 export default function Home() {
   return (
@@ -25,6 +26,9 @@ export default function Home() {
 
        {/* Tesiminals */}
        <Testimonals />
+
+       {/* CONTACT/FOOTER */}
+       <ContactFooter />
     </main>
   )
 } 
