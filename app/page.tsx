@@ -4,6 +4,7 @@ import HeroSection from './components/HeroSection'
 import ShortAboutMe from './components/ShortAboutMe'
 import Projects from './components/Projects'
 import MySkills from './components/MySkills'
+import Testimonals from './components/Testimonals'
 
 export default function Home() {
   return (
@@ -21,6 +22,9 @@ export default function Home() {
 
       {/* PROJECTS */}
        <Projects /> 
+
+       {/* Tesiminals */}
+       <Testimonals />
     </main>
   )
-}
+} 
