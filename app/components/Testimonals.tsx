@@ -3,51 +3,48 @@ import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
+import axios from "axios"
 
-function Testimonials() {
-  const testimonialsData = [
-    {
-      id: 1,
-      name: 'John Pantau',
-      content: 'I recently used Devflo company for a custom web development project and couldn\'t be happier with the results. The team was able to bring my unique ideas to life and create a website that truly stands out.',
-      company: 'MarketSavy',
-      avatar: 'https://i.pravatar.cc/301',
-    },
-    {
-      id: 2,
-      name: 'THIS IS SECOND',
-      content: 'I recently used Devflo company for a custom web development project and couldn\'t be happier with the results. The team was able to bring my unique ideas to life and create a website that truly stands out.',
-      company: 'SecondMarket',
-      avatar: 'https://i.pravatar.cc/301',
-    },
-    {
-      id: 3,
-      name: 'Kamel Singh',
-      content: 'I recently used Devflo company for a custom web development project and couldn\'t be happier with the results. The team was able to bring my unique ideas to life and create a website that truly stands out.',
-      company: 'Lapsea',
-      avatar: 'https://i.pravatar.cc/301',
-    },
-  ];
+interface TestimonialsInterfaceProps {
+  name: string;
+  avatar: string;
+  company: string;
+  content: string;
+}
+
+function Testimonials( { name, avatar, company, content }: TestimonialsInterfaceProps): ReactNode {
+  const [testimonialsData, setTestimonialsData] = useState(null);
+
+  const fetchTestimonials = async () => {
+    const res = await axios.get('http://localhost:8000/reviews');
+    setTestimonialsData(res.data);
+  };
+
+  useEffect(() => {
+    fetchTestimonials();
+  }, []);
 
   const itemsPerPage = 1;
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     // Automatically change testimonial every 5 seconds
-    const intervalId = setInterval(() => {
-      setCurrentPage((prev) => (prev % testimonialsData.length) + 1);
-    }, 5000);
+    if (testimonialsData && testimonialsData.length > 0) {
+      const intervalId = setInterval(() => {
+        setCurrentPage((prev) => (prev % testimonialsData.length) + 1);
+      }, 5000);
 
-    // Clear the interval on component unmount
-    return () => clearInterval(intervalId);
-  }, [testimonialsData.length]);
+      // Clear the interval on component unmount
+      return () => clearInterval(intervalId);
+    }
+  }, [testimonialsData]);
 
   const changeTestimonial = (page) => {
     setCurrentPage(page);
   };
 
-  const currentIndex = (currentPage - 1) % testimonialsData.length;
-  const currentTestimonial = testimonialsData[currentIndex];
+  const currentIndex = testimonialsData ? (currentPage - 1) % testimonialsData.length : 0;
+  const currentTestimonial = testimonialsData ? testimonialsData[currentIndex] : null;
 
   const handleReviewButtonClick = () => {
     alert('Redirect to the review page or display a review form.');
@@ -66,9 +63,9 @@ function Testimonials() {
       </div>
 
       {/* REVIEW CONTAINER */}
-      <div className="text-center lg:text-left lg:flex items-center justify-center gap-[164px] mx-4 md:mx-[64px] 2xl:mx-[256px] py-12 lg:py-[120px] relative">
+      <div className=" text-center lg:text-left lg:flex items-center justify-center gap-[164px] mx-4 md:mx-[64px] 2xl:mx-[256px] py-12 lg:py-[120px] relative">
         {/* IMAGE CONTAINER */}
-        <div className="flex items-center justify-center lg:flex-none">
+        <div className="flex items-center justify-center lg:flex-none lg:max-w-[532px]">
           <Image src={currentTestimonial?.avatar} alt={currentTestimonial?.name} width={301} height={301} className="w-[301px] h-[301px] rounded-full bg-[--brand-color] mb-12 lg:mb-0" />
         </div>
 
@@ -107,13 +104,13 @@ function Testimonials() {
 
           {/* PAGINATION CONTAINER */}
           <div className="absolute bottom-10 left-1/2 translate-x-[-50%]">
-            <Button onClick={() => changeTestimonial(currentPage - 1)} disabled={currentPage === 1} className="mr-4 rounded-lg">
-              <FaArrowLeft size={20} />
-            </Button>
-            <Button onClick={() => changeTestimonial(currentPage + 1)} disabled={currentPage === testimonialsData.length}>
-              <FaArrowRight size={20} />
-            </Button>
-          </div>
+  <Button onClick={() => changeTestimonial(currentPage - 1)} disabled={currentPage === 1} className="mr-4 rounded-lg">
+    <FaArrowLeft size={20} />
+  </Button>
+  <Button onClick={() => changeTestimonial(currentPage + 1)} disabled={testimonialsData && currentPage === testimonialsData.length}>
+    <FaArrowRight size={20} />
+  </Button>
+</div>
         </div>
       </div>
     </section>

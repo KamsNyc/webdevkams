@@ -18,7 +18,7 @@ import {BiLinkExternal} from "react-icons/bi"
 
 function ProjectCard() {
   return (
-    <div>
+    <section>
       {/* ICON CARD CONTAINER */}
       <div className="mt-[48px] md:flex items-center mx-0 md:mx-[64px] 2xl:mx-[256px]">
         {/* LEFT IMAGE CONTAINER */}
@@ -51,11 +51,11 @@ function ProjectCard() {
             {/* BADGES */}
             <div className="grid grid-cols-4 grid-row-3 gap-x-6 gap-y-2">
           {
-          List && List.map( (item) => (
-            <>
+          List && List.map( (item, index) => (
+            <div key={index}>
              {/* BADGES */}
                 <Badge className="flex-[25%] flex items-center justify-center text-gray-600 font-semibold uppercase" variant="secondary">{item.name}</Badge>
-            </>
+                </div>
           ))
           }
 
@@ -63,7 +63,7 @@ function ProjectCard() {
            
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 
