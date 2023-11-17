@@ -5,9 +5,17 @@ import Image from "next/image";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import axios from "axios"
 
+interface Testimonial {
+  avatar: string;
+  name: string;
+  company: string;
+  content: string;
+}
+
+
 
 function Testimonials() {
-  const [testimonialsData, setTestimonialsData] = useState(null);
+  const [testimonialsData, setTestimonialsData] = useState<Testimonial[] | null>(null);
 
   const fetchTestimonials = async () => {
     const res = await axios.get('http://localhost:8000/reviews');
