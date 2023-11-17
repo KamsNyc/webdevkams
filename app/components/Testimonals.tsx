@@ -68,7 +68,13 @@ function Testimonials() {
       <div className=" text-center lg:text-left lg:flex items-center justify-center gap-[164px] mx-4 md:mx-[64px] 2xl:mx-[256px] py-12 lg:py-[120px] relative">
         {/* IMAGE CONTAINER */}
         <div className="flex items-center justify-center lg:flex-none lg:max-w-[532px]">
-          <Image src={`/${currentTestimonial?.avatar}`} alt={currentTestimonial?.name} width={301} height={301} className="w-[301px] h-[301px] rounded-full bg-[--brand-color] mb-12 lg:mb-0" />
+        <Image
+  src={`/${currentTestimonial?.avatar}`}
+  alt={currentTestimonial?.name}
+  width={301}
+  height={301}
+  className="w-[301px] h-[301px] rounded-full bg-[--brand-color] mb-12 lg:mb-0"
+/>
         </div>
 
         {/* Review Context Container */}
