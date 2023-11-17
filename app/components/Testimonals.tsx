@@ -5,14 +5,8 @@ import Image from "next/image";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
 import axios from "axios"
 
-interface TestimonialsInterfaceProps {
-  name: string;
-  avatar: string;
-  company: string;
-  content: string;
-}
 
-function Testimonials( { name, avatar, company, content }: TestimonialsInterfaceProps): ReactNode {
+function Testimonials() {
   const [testimonialsData, setTestimonialsData] = useState(null);
 
   const fetchTestimonials = async () => {
@@ -71,7 +65,7 @@ function Testimonials( { name, avatar, company, content }: TestimonialsInterface
 
         {/* Review Context Container */}
         <div className="flex items-center justify-center lg:flex-none">
-          <div className="w-full md:max-w-[732px] lg:max-w-[532px] rounded-xl border border-[.5] lg:px-6 lg:py-8">
+          <div className="w-full md:max-w-[732px] lg:w-[532px] min-h-[450px] rounded-xl border border-[.5] lg:px-6 lg:py-8">
             <div className="flex items-center gap-1">
               {/* LOGO*/}
               <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 32 32">
