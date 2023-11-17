@@ -70,7 +70,7 @@ function Testimonials() {
         <div className="flex items-center justify-center lg:flex-none lg:max-w-[532px]">
         <Image
   src={`/${currentTestimonial?.avatar}`}
-  alt={currentTestimonial?.name}
+  alt={currentTestimonial?.name || "Testimonal Avatar"}
   width={301}
   height={301}
   className="w-[301px] h-[301px] rounded-full bg-[--brand-color] mb-12 lg:mb-0"
