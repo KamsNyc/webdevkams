@@ -109,9 +109,13 @@ function Testimonials() {
   <Button onClick={() => changeTestimonial(currentPage - 1)} disabled={currentPage === 1} className="mr-4 rounded-lg">
     <FaArrowLeft size={20} />
   </Button>
-  <Button onClick={() => changeTestimonial(currentPage + 1)} disabled={testimonialsData && currentPage === testimonialsData.length}>
-    <FaArrowRight size={20} />
-  </Button>
+  {/* used chatgpt for this below */}
+  <Button
+  onClick={() => changeTestimonial(currentPage + 1)}
+  disabled={(testimonialsData ?? false) && currentPage === (testimonialsData ?? []).length}
+>
+  <FaArrowRight size={20} />
+</Button>
 </div>
         </div>
       </div>
