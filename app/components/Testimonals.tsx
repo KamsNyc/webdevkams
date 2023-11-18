@@ -59,7 +59,7 @@ function Testimonials() {
         <p className="text-[24px] text-[--brand-color] uppercase">
           TESTIMONIALS
         </p>
-        <span className="text-[64px] mt-4 lg:mt-[80px]  leading-[3.75rem] font-bold">
+        <span className="text-[64px] mt-4 lg:mt-[80px] leading-[3.75rem] font-bold">
           CLIENT<br></br>EXPERIENCES
         </span>
       </div>
@@ -69,7 +69,7 @@ function Testimonials() {
         {/* IMAGE CONTAINER */}
         <div className="flex items-center justify-center lg:flex-none lg:max-w-[532px]">
         <Image
-  src={`/${currentTestimonial?.avatar}`}
+  src={`https://i.pravatar.cc/301`}
   alt={currentTestimonial?.name || "Testimonal Avatar"}
   width={301}
   height={301}
