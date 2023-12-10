@@ -26,11 +26,11 @@ function ProjectCard() {
             {/* ICON CARD CONTAINER */}
             <div className="mt-[48px] md:flex items-center mx-0 md:mx-[64px] 2xl:mx-[256px]">
               {/* LEFT IMAGE CONTAINER */}
-              <div className="h-full w-full md:w-1/2 bg-gray-50 rounded-xl flex items-center justify-center p-4 lg:p-8">
+              <div className="h-full w-full md:w-1/2 overflow-hidden bg-gray-50 rounded-xl flex items-center justify-center p-4 lg:p-8">
                 <img
                   src={project.image}
                   alt={project ? project.alt : project.title}
-                  className="rounded-md object-cover"
+                  className="rounded-md object-cover scale-150 "
                 />
               </div>
               {/* RIGHT SIDE CONTAINER */}
