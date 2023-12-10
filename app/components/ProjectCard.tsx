@@ -6,8 +6,17 @@ import { BiLinkExternal } from "react-icons/bi";
 import axios from "axios";
 import Link from "next/link";
 
+interface Project {
+  title: string;
+  image: string;
+  alt: string;
+  projectLink: string;
+  context: string;
+  tags: string[];
+}
+
 function ProjectCard() {
-  const [projects, setProjects] = useState();
+  const [projects, setProjects] = useState<Project[] | undefined>(undefined);
 
   const FetchProject = async () => {
     const res = await axios.get("http://localhost:8000/project");
@@ -29,7 +38,7 @@ function ProjectCard() {
               <div className="h-full w-full md:w-1/2 overflow-hidden bg-gray-50 rounded-xl flex items-center justify-center p-4 lg:p-8">
                 <img
                   src={project.image}
-                  alt={project ? project.alt : project.title}
+                  alt={project.alt}
                   className="rounded-md object-cover scale-150 "
                 />
               </div>
