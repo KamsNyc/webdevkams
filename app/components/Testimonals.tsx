@@ -12,10 +12,46 @@ interface Testimonial {
   content: string;
 }
 
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"
+
 
 
 function Testimonials() {
   const [testimonialsData, setTestimonialsData] = useState<Testimonial[] | null>(null);
+  const [createForm, setCreateForm] = useState({
+    name: '',
+    company: '',
+    content: '',
+    avatar: '',
+  });
+
+  const updateCreateFormField = (e:any) => {
+    const {name, value} = e.target;
+    setCreateForm({
+      ...createForm,
+      [name]: value,
+    })
+  }
+
+  const createReview = async (e:any) => {
+    e.preventDefault();
+    const res = await axios.post('http://localhost:8000/review', createForm);
+    setTestimonialsData((prevData) => [...(prevData || []), res.data]);
+    // Clear the form after submitting
+    setCreateForm({
+      name: '',
+      company: '',
+      content: '',
+      avatar: '',
+    });
+  };
 
   const fetchTestimonials = async () => {
     const res = await axios.get('http://localhost:8000/reviews');
@@ -48,9 +84,6 @@ function Testimonials() {
   const currentIndex = testimonialsData ? (currentPage - 1) % testimonialsData.length : 0;
   const currentTestimonial = testimonialsData ? testimonialsData[currentIndex] : null;
 
-  const handleReviewButtonClick = () => {
-    alert('Redirect to the review page or display a review form.');
-  };
 
   return (
     <section className="w-full h-full">
@@ -70,7 +103,7 @@ function Testimonials() {
         <div className="flex items-center justify-center lg:flex-none lg:max-w-[532px]">
         <Image
   src={`https://i.pravatar.cc/301`}
-  alt={currentTestimonial?.name || "Testimonal Avatar"}
+  alt={createForm.avatar || "Testimonal Avatar"}
   width={301}
   height={301}
   className="w-[301px] h-[301px] rounded-full bg-[--brand-color] mb-12 lg:mb-0"
@@ -104,9 +137,38 @@ function Testimonials() {
 
             {/* Button for leaving a review */}
             <div className="absolute top-0 lg:top-4 left-0">
-              <Button className="rounded-md" onClick={handleReviewButtonClick}>
-                Leave a Review
-              </Button>
+          
+            <Sheet>
+  <SheetTrigger className='text-white bg-black py-1.5 px-2.5 rounded-xl mt-2 lg:mt-0'>Write a Review</SheetTrigger>
+  <SheetContent>
+    <SheetHeader>
+      <SheetTitle className='border-b py-4'>Welcome! Leave a Review </SheetTitle>
+      <SheetDescription className=' py-5'>
+            {/* FORM */}
+        <form onSubmit={(e) => createReview(e)} className="flex-col space-y-2">
+          <div className="flex-col flex ">
+        <label htmlFor="name" className='text-left text-[16px] font-bold text-black'>Name</label>
+        <input onChange={updateCreateFormField} value={createForm.name} type="name" className='flex-1 py-2 rounded-md pl-2 text-black' name="name"/>
+        </div>
+        <div className="flex-col flex">
+        <label htmlFor="company" className='text-left text-[16px] font-bold text-black'>COMPANY</label>
+        <input onChange={updateCreateFormField} value={createForm.company} type="company" className='flex-1 py-2 rounded-md pl-2 text-black' name="company" />
+        </div>
+        <div className="flex-col flex ">
+        <label htmlFor="avatar" className='text-left text-[16px] font-bold text-black'>AVATAR</label>
+        <input onChange={updateCreateFormField} value={createForm.avatar} type="avatar" className='flex-1 py-2 rounded-md pl-2 text-black' name="avatar" />
+        </div>
+        <div className="flex-col flex h-[250px]">
+        <label htmlFor="content" className='text-left text-[16px] font-bold text-black'>REVIEW</label>
+        <textarea onChange={updateCreateFormField} value={createForm.content} className='flex-1 py-2 rounded-md pl-2 text-black text-[16px]' name="content" />
+        </div>
+        <button type="submit" className='py-2 px-2.5 rounded-lg bg-black font-bold text-white'>Submit</button>
+        </form>
+
+      </SheetDescription>
+    </SheetHeader>
+  </SheetContent>
+</Sheet>
             </div>
           </div>
 

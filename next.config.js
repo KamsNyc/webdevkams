@@ -3,7 +3,10 @@ const nextConfig = {
     images: {
         domains: [
             'gravatar.com',
-            'i.pravatar.cc'
+            'i.pravatar.cc',
+            'www.eu.ui-avatars.com',
+            'images.unsplash.com',
+            'iili.io'
         ],
     }
 }

@@ -17,10 +17,7 @@ function Projects() {
           </span>
         </p>
       </div>
-      <ProjectCard />
-      <ProjectCard />
-      <ProjectCard />
-       
+      <ProjectCard />    
     </section>
   );
 }

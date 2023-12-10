@@ -10,7 +10,7 @@ import TestimonialsTest from './components/TestimonialsTest'
 
 export default function Home() {
   return (
-    <main className='w-full h-full'>
+    <main className='w-full h-full overflow-hidden'>
       {/* NAVBAR */}
       <Navbar />
       {/* HERO SECTION */}
