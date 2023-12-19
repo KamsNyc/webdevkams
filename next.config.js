@@ -6,7 +6,9 @@ const nextConfig = {
             'i.pravatar.cc',
             'www.eu.ui-avatars.com',
             'images.unsplash.com',
-            'iili.io'
+            'iili.io',
+            'www.google.com',
+            'cdn4.iconfinder.com'
         ],
     }
 }

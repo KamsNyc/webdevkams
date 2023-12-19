@@ -18,7 +18,7 @@ function ContactFooter() {
               className="hidden lg:flex"
             >
               <rect width="192" height="20" fill="white" />
-            </svg>{" "}
+            </svg>
             KAMEL SINGH
           </h1>
         </div>

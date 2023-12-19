@@ -102,11 +102,11 @@ function Testimonials() {
         {/* IMAGE CONTAINER */}
         <div className="flex items-center justify-center lg:flex-none lg:max-w-[532px]">
         <Image
-  src={`https://i.pravatar.cc/301`}
+  src={`https://cdn4.iconfinder.com/data/icons/business-vol-4-2/100/Artboard_15-512.png`}
   alt={createForm.avatar || "Testimonal Avatar"}
   width={301}
   height={301}
-  className="w-[301px] h-[301px] rounded-full bg-[--brand-color] mb-12 lg:mb-0"
+  className="w-[301px] h-[301px] rounded-full bg-gray-300 mb-12 lg:mb-0"
 />
         </div>
 

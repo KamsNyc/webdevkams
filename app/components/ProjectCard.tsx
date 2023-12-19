@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { BiLinkExternal } from "react-icons/bi";
 import axios from "axios";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 interface Project {
   title: string;
@@ -13,6 +14,7 @@ interface Project {
   projectLink: string;
   context: string;
   tags: string[];
+  _id: string;
 }
 
 function ProjectCard() {
@@ -28,12 +30,12 @@ function ProjectCard() {
     FetchProject();
   }, []);
   return (
-    <div>
+    <div className="">
       {projects &&
         projects.map((project, index) => (
           <div key={index} className="">
             {/* ICON CARD CONTAINER */}
-            <div className="mt-[48px] md:flex items-center mx-0 md:mx-[64px] 2xl:mx-[256px]">
+            <div className="mt-[48px] md:flex items-center mx-0 md:mx-[64px] 2xl:mx-[256px] hover:border rounded-xl cursor-pointer">
               {/* LEFT IMAGE CONTAINER */}
               <div className="h-full w-full md:w-1/2 overflow-hidden bg-gray-50 rounded-xl flex items-center justify-center p-4 lg:p-8">
                 <img
@@ -90,6 +92,11 @@ function ProjectCard() {
                       }
                     </div>
                   ))}
+                </div>
+
+                {/* VIEW PROJECT IN DETAILS */}
+                <div className="mt-5">
+                  <Button className=""><Link href={`/${project._id}`}>View More</Link></Button>
                 </div>
               </div>
             </div>
