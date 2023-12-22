@@ -25,7 +25,7 @@ function Projects() {
         <p className="text-[24px] text-[--brand-color] uppercase  leading-7 w-full">
           selected projects 
           <span className="text-[18px] text-black flex items-center font-medium normal-case w-full">
-            Current Selected Projects:
+            Personal / Client Projects:
           </span>
         </p>
         </div>

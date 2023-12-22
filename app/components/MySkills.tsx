@@ -24,9 +24,9 @@ function MySkills() {
         <section className='my-[24px] md:mt-[48px] gap-y-4 gap-x-3 grid grid-cols-4 grid-rows-3 md:flex item-center px-4 py-2'>
            {
             Icons && Icons.map( (icon) => (
-                <>
+                <div  key={icon.name} >
                  {/* ICON CARD CONTAINER */}
-            <div key={icon.name} className="flex flex-col items-center justify-between w-full">
+            <div className="flex flex-col items-center justify-between w-full">
             {/* ICONS */}
             <Image
             src={icon.icon}
@@ -39,7 +39,7 @@ function MySkills() {
             {/* TITLE OF ICON */}
             <h4 className='font-semibold'>{icon.name}</h4>
             </div>
-                </>
+                </div>
             ))
            }
         </section>
