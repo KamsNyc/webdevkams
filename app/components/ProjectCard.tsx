@@ -4,7 +4,22 @@ import { BiLinkExternal } from 'react-icons/bi';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
-function ProjectCard({ projects }) {
+
+type Project = {
+  _id: string;
+  title: string;
+  image: string;
+  alt: string;
+  projectLink: string;
+  context: string;
+  tags: string[];
+};
+
+interface ProjectCardProps {
+  projects: Project[];
+}
+
+function ProjectCard({ projects }: ProjectCardProps) {
   return (
     <div className="">
       {projects &&
