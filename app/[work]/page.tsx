@@ -39,8 +39,10 @@ function Page({ params }: any) {
 
   return (
     <div className='text-black'>
+      {/* PROJECT OVERVIEW CONTAINER */}
       {project && (
-        <div key={project._id}>
+        <div key={project._id} className=" bg-gray-300 mx-4 md:mx-[64px] 2xl:mx-[256px]">
+          {/* MAIN IMAGE WITH A VIDEO IMAGE */}
           <h1>{project.title}</h1>
         </div>
       )}
