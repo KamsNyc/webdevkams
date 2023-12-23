@@ -28,7 +28,7 @@ function Navbar() {
       className={`flex h-[62px] w-full fixed top-0 left-0 items-center justify-between px-4 md:px-[64px] z-20 ${navbarClass}`}
     >
       {/* LOGO */}
-      <h3 className='text-white font-extrabold tracking-widest text-[14px]'>©WEBDEVKAMS</h3>
+      <h3 className='text-white font-extrabold tracking-widest text-[14px]'>©KAMEL-SINGH</h3>
 
       {/* MENU LINKS */}
       <ul className='text-white flex items-center gap-[24px]'>

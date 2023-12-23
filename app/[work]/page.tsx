@@ -1,6 +1,7 @@
 'use client'
 // Import necessary modules
 import axios from 'axios';
+import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 
 // Define the Project interface
@@ -43,6 +44,12 @@ function Page({ params }: any) {
       {project && (
         <div key={project._id} className=" bg-gray-300 mx-4 md:mx-[64px] 2xl:mx-[256px]">
           {/* MAIN IMAGE WITH A VIDEO IMAGE */}
+          <Image
+          src={project.image}
+          alt={project.alt}
+          width={1000}
+          height={400}
+          />
           <h1>{project.title}</h1>
         </div>
       )}
